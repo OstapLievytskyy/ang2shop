@@ -1,0 +1,30 @@
+.product{
+    border-color: red;
+    border-style: solid;
+    background-color: lightgrey;
+    border-width: 1px;
+    max-width: 50%;
+    min-width: 10%;
+    height: 100px;
+    text-align: right;
+    margin: 2px;
+    display: inline-block;
+}
+
+.product .description{
+    max-height: 100px;
+    width: 70%;
+    float: left;
+}
+
+.product .imageContainer{
+    height:100%;
+    width: 30%;
+    float: right;
+}
+.product img{
+    width: 95%;
+    margin: 2px;
+    max-height: 96px;
+    max-width: 96px;
+}
