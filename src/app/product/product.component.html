@@ -1,7 +1,8 @@
 <div class="product">
   <div class="description">
-    <p># '{{product.id}}'</p>
-    <p>decription: '{{product.name | uppercase}}'</p>
+    <p>{{product.name}} '{{product.description}}'</p>
+    <p>category: '{{product.category | uppercase}}'</p>
+    <p>{{product.isAvailable ? '$'+product.price : 'not avaliable'}}</p>
   </div>
   <div class="imageContainer">
     <img src={{product.imgPath}}/>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product/classes/product';
+import { categoryEnum } from '../product/classes/categotyEnum';
 
 @Component({
   selector: 'app-product',
@@ -11,9 +12,12 @@ export class ProductComponent implements OnInit {
 
   constructor() {
     this.product = {
-      id: 1,
-      name: 'Pen',
-      imgPath: 'http://www.staples.co.uk/content/images/product/GenesisExtraLarge/51/61/asset.3395161.jpg'
+      name: 'pen',
+      description: 'Bic',
+      price: 10,
+      category: categoryEnum.bureau,
+      imgPath: 'http://www.staples.co.uk/content/images/product/GenesisExtraLarge/51/61/asset.3395161.jpg',
+      isAvailable: true
     };
   }
 
