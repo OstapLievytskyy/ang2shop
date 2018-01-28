@@ -1,7 +1,20 @@
 <div class="product">
   <div class="description">
-    <p>{{product.name}} '{{product.description}}'</p>
+    <p>id: {{product.id}}</p>
     <p>category: '{{product.category | uppercase}}'</p>
+    <p>{{product.name}} '{{product.description}}'</p>
+    <span>ingredients</span>
+    <ul>
+      <li *ngFor="let ingredient of product.ingredients">
+        <span>{{ingredient}}</span>
+      </li>
+    </ul>
+    <span>equivalents</span>
+    <ul>
+        <li *ngFor="let equivalent of product.equivalents">
+          <span>{{equivalent}}</span>
+        </li>
+      </ul>
     <p>{{product.isAvailable ? '$'+product.price : 'not avaliable'}}</p>
   </div>
   <div class="imageContainer">

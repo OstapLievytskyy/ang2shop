@@ -3,16 +3,24 @@
     border-style: solid;
     background-color: lightgrey;
     border-width: 1px;
-    max-width: 50%;
-    min-width: 10%;
-    height: 100px;
+    max-width: 250px;
+    min-width: 100px;
+    /* height: 100px; */
     text-align: right;
     margin: 2px;
     display: inline-block;
 }
 
+.product p{
+    margin: 0;
+}
+
+.product ul{
+    text-align: left;
+}
+
 .product .description{
-    max-height: 100px;
+    /* max-height: 100px; */
     width: 70%;
     float: left;
 }

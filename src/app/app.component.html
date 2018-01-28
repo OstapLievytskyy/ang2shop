@@ -2,7 +2,14 @@
 <div style="text-align:center">
   <h1>
     Welcome to the {{ title | uppercase }}!
-  </h1>
+  </h1>  
 </div>
-
-<app-product></app-product>
+<div style=" background-color: lightGray; width: 100%; height: 21px; text-align:right">
+  <div style="float:left;">
+    <app-cart></app-cart>
+  </div>  
+  <div style="float:right;">
+    <button (click)="clickEventHandler()">Buy</button>
+  </div>
+</div>
+<app-product-list></app-product-list>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product/classes/product';
 import { categoryEnum } from '../product/classes/categotyEnum';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product',
@@ -10,18 +11,15 @@ import { categoryEnum } from '../product/classes/categotyEnum';
 export class ProductComponent implements OnInit {
   product: Product;
 
-  constructor() {
-    this.product = {
-      name: 'pen',
-      description: 'Bic',
-      price: 10,
-      category: categoryEnum.bureau,
-      imgPath: 'http://www.staples.co.uk/content/images/product/GenesisExtraLarge/51/61/asset.3395161.jpg',
-      isAvailable: true
-    };
+  constructor(private productService: ProductService) {
+  }
+
+  getProduct(): void {
+    this.product = this.productService.getProduct();
   }
 
   ngOnInit() {
+    this.getProduct();
   }
 
 }
