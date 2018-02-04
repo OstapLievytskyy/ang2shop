@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from './product/classes/product';
-import { categoryEnum } from './product/classes/categotyEnum';
+import { Product, CategoryEnum } from './../../components/product/classes';
 
 
 @Injectable()
@@ -14,7 +13,7 @@ export class ProductService {
     product.name = 'pen';
     product.description = 'Bic';
     product.price = 10;
-    product.category = categoryEnum.bureau;
+    product.category = CategoryEnum.bureau;
     product.imgPath = 'http://www.staples.co.uk/content/images/product/GenesisExtraLarge/51/61/asset.3395161.jpg';
     product.isAvailable = true;
     product.equivalents = [];
@@ -36,7 +35,7 @@ export class ProductService {
       item.name = 'pen';
       item.description = 'Bic';
       item.price = 10;
-      item.category = categoryEnum.bureau;
+      item.category = CategoryEnum.bureau;
       item.imgPath = 'http://www.staples.co.uk/content/images/product/GenesisExtraLarge/51/61/asset.3395161.jpg';
       item.isAvailable = true;
       item.equivalents = [];

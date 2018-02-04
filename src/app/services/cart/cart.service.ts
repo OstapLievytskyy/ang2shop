@@ -1,6 +1,5 @@
 import { Injectable, Input } from '@angular/core';
-import { Product } from './product/classes/product';
-import { categoryEnum } from './product/classes/categotyEnum';
+import { Product, CategoryEnum } from './../../components/product/classes';
 
 @Injectable()
 export class CartService {

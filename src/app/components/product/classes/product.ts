@@ -1,11 +1,11 @@
-import { categoryEnum } from '../classes/categotyEnum';
+import { CategoryEnum } from '../classes';
 
 export class Product {
   id: number;
   name: string;
   description: string;
   price: number;
-  category: categoryEnum;
+  category: CategoryEnum;
   imgPath: string;
   isAvailable: boolean;
   ingredients: string[];

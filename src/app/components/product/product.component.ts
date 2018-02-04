@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Product } from '../product/classes/product';
-import { categoryEnum } from '../product/classes/categotyEnum';
-import { ProductService } from '../product.service';
+import { Product, CategoryEnum } from '../product/classes';
+import { ProductService } from './../../services';
 
 @Component({
   selector: 'app-product',
