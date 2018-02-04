@@ -26,4 +26,10 @@ export class CartComponent implements OnInit {
   public clearCart(product) {
     this.cartService.products = [];
   }
+
+  public getTotal() {
+    return this.cartService
+      .ShowAll().map(({ price, count }) => price * count)
+      .reduce((sum, current) => sum + current);
+  }
 }

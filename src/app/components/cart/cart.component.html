@@ -1,9 +1,9 @@
 <div *ngIf="productsInCart() && productsInCart().length>0" class="cart">
   <div class="simple-text">
-    products in the cart ({{productsInCart().length}}):
+    cart: (items:{{productsInCart().length}}, total:${{getTotal()}}):
   </div>
   <div *ngFor="let product of productsInCart()" class="simple-text">
-       {{product.id}}<div class="simple-text" *ngIf="productsInCart().indexOf(product)>0">, </div>
+       {{product.id}}({{product.count}})<div class="simple-text" *ngIf="productsInCart().indexOf(product)>0">, </div>
   </div>
   <div style="float:right;">
     <button (click)="clearCart()">Clear</button>
