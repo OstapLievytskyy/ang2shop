@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../product/classes/product';
 import { categoryEnum } from '../product/classes/categotyEnum';
 import { ProductService } from '../product.service';
@@ -9,6 +9,7 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+  @Input()
   product: Product;
 
   constructor(private productService: ProductService) {
@@ -19,7 +20,7 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getProduct();
+    // this.getProduct();
   }
 
 }

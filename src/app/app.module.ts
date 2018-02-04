@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
-import {ProductService} from './product.service';
+import { ProductService } from './product.service';
+import { CartService } from './cart.service';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CartComponent } from './cart/cart/cart.component';
 
@@ -19,7 +20,7 @@ import { CartComponent } from './cart/cart/cart.component';
   imports: [
     BrowserModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../product/classes/product';
+import { CartService } from '../../cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,13 +8,24 @@ import { Product } from '../../product/classes/product';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  products: Product[];
+  // products: Product[];
 
-  constructor() {
-    this.products = [];
+  constructor(private cartService: CartService) {
+    // this.products = this.cartService.ShowAll();
   }
 
   ngOnInit() {
   }
 
+  public productsInCart() {
+    return this.cartService.ShowAll();
+  }
+
+  public removeFromCart(product) {
+    this.cartService.RemoveFromCart(product);
+  }
+
+  public clearCart(product) {
+    this.cartService.products = [];
+  }
 }

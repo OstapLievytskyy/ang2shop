@@ -1,8 +1,11 @@
-<div *ngIf="products.length>0" class="cart">
-  products in the cart ({{products.length}}): 
-  <ul>
-    <li *ngFor="let product of productList">
-      <span>{{product.id}}</span>
-    </li>
-  </ul>
+<div *ngIf="productsInCart() && productsInCart().length>0" class="cart">
+  <div class="simple-text">
+    products in the cart ({{productsInCart().length}}):
+  </div>
+  <div *ngFor="let product of productsInCart()" class="simple-text">
+       {{product.id}}<div class="simple-text" *ngIf="productsInCart().indexOf(product)>0">, </div>
+  </div>
+  <div style="float:right;">
+    <button (click)="clearCart()">Clear</button>
+  </div>  
 </div>

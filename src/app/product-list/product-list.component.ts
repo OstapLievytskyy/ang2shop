@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product/classes/product';
 import { ProductService } from '../product.service';
+import { CartService } from '../cart.service';
+
 
 @Component({
   selector: 'app-product-list',
@@ -10,7 +12,8 @@ import { ProductService } from '../product.service';
 export class ProductListComponent implements OnInit {
   productList: Product[];
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+    private cartService: CartService) { }
 
   getProducts(): void {
     this.productList = this.productService.getProducts();
@@ -18,7 +21,19 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.getProducts();
-    console.log(this.productList);
   }
 
+  public addToCart(product) {
+    this.cartService.AddToCard(product);
+  }
+
+  public removeFromCart(product) {
+    this.cartService.RemoveFromCart(product);
+  }
+
+  public isSelected(product) {
+    const idList = this.cartService.ShowAll().map(({ id }) => id);
+    console.log('is selected = ' + idList && idList.indexOf(product.id) >= 0);
+    return idList && idList.indexOf(product.id) >= 0;
+  }
 }

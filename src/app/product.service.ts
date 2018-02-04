@@ -42,8 +42,8 @@ export class ProductService {
       item.equivalents = [];
       item.ingredients = [];
       for (const iterator of numbers) {
-        item.equivalents[num - 1] = 'equivalent_' + iterator;
-        item.ingredients[num - 1] = 'ingedient_' + iterator;
+        item.equivalents[iterator - 1] = 'equivalent_' + iterator;
+        item.ingredients[iterator - 1] = 'ingedient_' + iterator;
       }
 
       productList[num - 1] = item;
