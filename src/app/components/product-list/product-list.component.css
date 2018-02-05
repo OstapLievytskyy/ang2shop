@@ -1,3 +1,10 @@
 .productList{
-    display: flex;
+    display: inline-block;
+    max-width: 250px;
+    min-width: 100px;
+}
+
+.button-row {    
+    text-align: center;
+    display: inline-block;    
 }

@@ -1,7 +1,11 @@
-<div class="productList">
-  <div *ngFor="let product of productList">
-    <button (click)="addToCart(product)">+</button>
-    <button (click)="removeFromCart(product)">-</button>
-    <app-product [product]=product></app-product>
+<div>
+  <div *ngFor="let product of productList" class="productList">
+    <div class="button-row" style="padding-left:2px;">
+        <button (click)="addToCart(product)">+</button>
+        <button (click)="removeFromCart(product)">-</button>
+    </div>
+    <div class="button-row">
+        <app-product [product]=product></app-product>  
+    </div>
   </div>
 </div>

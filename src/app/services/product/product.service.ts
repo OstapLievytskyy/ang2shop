@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product, CategoryEnum } from './../../components/product/classes';
+import { Product, CategoryEnum } from './../../classes';
 
 
 @Injectable()
@@ -9,7 +9,7 @@ export class ProductService {
 
   getProduct() {
     const product = new Product();
-    product.id = 0;
+    product.id = '0';
     product.name = 'pen';
     product.description = 'Bic';
     product.price = 10;
@@ -31,7 +31,7 @@ export class ProductService {
     const numbers = [1, 2, 3];
     for (const num of numbers) {
       const item = new Product();
-      item.id = num;
+      item.id = num + '';
       item.name = 'pen';
       item.description = 'Bic';
       item.price = 10;

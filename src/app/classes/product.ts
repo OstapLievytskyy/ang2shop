@@ -1,7 +1,7 @@
-import { CategoryEnum } from '../classes';
+import { Identifier, CategoryEnum } from './';
 
-export class Product {
-  id: number;
+export class Product implements Identifier {
+  id: string;
   name: string;
   description: string;
   price: number;

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Product, CategoryEnum } from '../product/classes';
+import { Product, CategoryEnum } from './../../classes/';
 import { ProductService } from './../../services';
 
 @Component({

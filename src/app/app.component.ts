@@ -1,15 +1,26 @@
 import { Component } from '@angular/core';
-import { ProductService, CartService } from './services';
+import { ProductService, CartService, ConstantsService } from './services';
+import { KeyValuePair } from './classes/index';
+
+const constService = new ConstantsService();
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [{provide: ConstantsService, useValue: constService}]
 })
 export class AppComponent {
-  title = 'shop';
+  constants: KeyValuePair[];
 
-  public clickEventHandler(event, item) {
-    console.log('you have bought a pen!');
+  constructor(private ConstService: ConstantsService) {
+    this.constants = this.ConstService.getAllData();
+    // this.title = constService.getValue('TITLE') + ' ' + constService.getValue('VERSION');
   }
+
+  public showTitle() {
+    return this.constants.find(item => item.id === 'TITLE').value + ' ' +
+    this.constants.find(item => item.id === 'VERSION').value;
+  }
+
 }
