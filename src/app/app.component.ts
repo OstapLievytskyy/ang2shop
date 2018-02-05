@@ -15,7 +15,6 @@ export class AppComponent {
 
   constructor(private ConstService: ConstantsService) {
     this.constants = this.ConstService.getAllData();
-    // this.title = constService.getValue('TITLE') + ' ' + constService.getValue('VERSION');
   }
 
   public showTitle() {
